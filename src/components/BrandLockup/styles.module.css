@@ -1,0 +1,48 @@
+.lockup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.half {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+.half:hover {
+  text-decoration: none;
+  opacity: 0.82;
+}
+
+.mwMark {
+  height: 20px;
+  width: auto;
+  flex: none;
+  display: block;
+}
+
+.mwWord {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ifm-heading-color);
+}
+
+/* "docs" rides along quieter, so the brand reads first */
+.docs {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+
+@media (max-width: 400px) {
+  .docs {
+    display: none;
+  }
+}

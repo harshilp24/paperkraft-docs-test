@@ -1,0 +1,37 @@
+# Xenon Studio Docs
+
+> Xenon Studio keeps your software documentation in step with your product.
+
+## Docs
+
+- [Introduction](/docs/intro): Xenon Studio is an AI technical writer for software teams.
+- [Quickstart](/docs/quickstart)
+- [What Xenon Studio does](/docs/get-started/what-xenon-studio-does): A plain overview of the agents and what each one handles.
+- [Set up your workspace](/docs/get-started/set-up-your-workspace): How to create a workspace, connect your tools and choose your docs site.
+- [Your first change](/docs/get-started/your-first-change): How to ask for a docs change and review what comes back.
+- [Plans and credits](/docs/get-started/plans-and-credits): What each plan includes and how credits are used.
+- [Docs sync](/docs/agents/docs-sync): How a merged pull request becomes one docs pull request with the affected pages updated.
+- [Docs writer](/docs/agents/docs-writer): How first drafts are written for new features.
+- [Link fixer](/docs/agents/link-fixer): How broken links are found and fixed each week.
+- [Slack agent](/docs/agents/slack-agent): How to ask for a docs update from any thread.
+- [Review agent](/docs/review-and-publishing/review-agent): How a second agent checks every change and scores its risk.
+- [Review policy](/docs/review-and-publishing/review-policy): How to set which risk levels can merge on their own.
+- [Approving a change](/docs/review-and-publishing/approving-a-change): How to review, edit and approve a change in Slack or in your docs tool.
+- [Docs Score](/docs/review-and-publishing/docs-score): What the score measures and how to use the fixes list.
+- [Triggers and schedules](/docs/automations/triggers-and-schedules): How to run agents on triggers, schedules and workflows.
+- [Weekly digest](/docs/automations/weekly-digest): How to get everything that shipped in one message.
+- [Stale page alerts](/docs/automations/stale-page-alerts): How scheduled scans find pages that need attention.
+- [Connect your docs repository](/docs/connections/connect-your-docs-repository): How to link the docs site you already have.
+- [Connect Slack and your help centre](/docs/connections/connect-slack-and-your-help-centre): How to link the tools where your team works and your customers ask questions.
+- [Custom skills and company context](/docs/connections/custom-skills-and-company-context): How to teach Xenon Studio your voice, house style and writing framework.
+- [For engineering](/docs/teams/for-engineering): Docs that change with every merge.
+- [For support](/docs/teams/for-support): Fewer tickets that ask the same thing.
+- [For product](/docs/teams/for-product): Every launch documented.
+- [For developer relations](/docs/teams/for-developer-relations): API docs developers can trust.
+- [For technical writers](/docs/teams/for-technical-writers): Agents do the upkeep.
+- [Common questions](/docs/help/common-questions): Answers about moving your docs, auto-merging and what counts as a docs repo.
+- [Troubleshooting](/docs/help/troubleshooting): What to check when a change, a scan or a connection does not work as expected.
+- [Roles and permissions](/docs/help/roles-and-permissions): What owners, members and custom roles can do.
+- [Security and data](/docs/help/security-and-data): What the plans cover for audit logs, single sign-on and data residency.
+- [FAQ](/docs/faq)
+- [Changelog](/docs/changelog)

@@ -1,0 +1,122 @@
+.wrap {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.q {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn,
+.btnOn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 34px;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-color);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 13.5px;
+  font-weight: 550;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.btn:hover {
+  border-color: var(--mw-brand);
+  color: var(--mw-brand);
+}
+.btnOn {
+  border-color: var(--mw-brand);
+  background: var(--mw-brand-soft);
+  color: var(--mw-brand);
+}
+
+.thanks {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* follow-up */
+.followUp {
+  margin-top: 16px;
+  max-width: 34rem;
+}
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 7px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 9px;
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: inherit;
+  font-size: 13.5px;
+  line-height: 1.6;
+  resize: vertical;
+}
+.textarea:focus {
+  outline: none;
+  border-color: var(--mw-brand);
+}
+
+.formActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.submit {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 9px;
+  border: 1px solid var(--mw-brand);
+  background: var(--mw-brand);
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.submit:hover {
+  background: var(--mw-brand-dark);
+  border-color: var(--mw-brand-dark);
+}
+
+.issueLink {
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-600);
+}
+.issueLink:hover {
+  color: var(--mw-brand);
+  text-decoration: none;
+}

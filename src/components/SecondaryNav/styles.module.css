@@ -1,0 +1,113 @@
+.subnav {
+  position: sticky;
+  top: var(--mw-navbar-real-height, 3.75rem);
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 44px;
+  padding: 0 20px;
+  background: var(--ifm-navbar-background-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  overflow-x: auto;
+}
+.subnav::-webkit-scrollbar {
+  height: 0;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 13px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.tab:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+.tabActive {
+  color: var(--mw-brand);
+  font-weight: 600;
+}
+.tabActive::after {
+  content: '';
+  position: absolute;
+  left: 13px;
+  right: 13px;
+  bottom: -1px;
+  height: 2px;
+  background: var(--mw-brand);
+  border-radius: 2px 2px 0 0;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.onboardingHint {
+  margin-left: 12px;
+  font-size: 12.5px;
+  color: var(--ifm-color-emphasis-600);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media (max-width: 640px) {
+  .onboardingHint {
+    display: none;
+  }
+}
+
+.metaLink {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 13px;
+  padding: 0 10px;
+  white-space: nowrap;
+  cursor: default;
+}
+a.metaLink:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: none;
+}
+
+/* Live status indicator. Green until a real status feed says otherwise. */
+.statusDot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #16a34a;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.iconLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-left: 2px;
+  border-radius: 7px;
+  color: var(--ifm-color-emphasis-600);
+  flex: none;
+}
+.iconLink:hover {
+  color: var(--ifm-font-color-base);
+  background: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+}
+
+/* The meta links are secondary; drop them before the tabs get squeezed. */
+@media (max-width: 900px) {
+  .metaLink,
+  .iconLink {
+    display: none;
+  }
+}
