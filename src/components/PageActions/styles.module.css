@@ -1,0 +1,171 @@
+/* Split button (copy | caret) with a dropdown of the remaining actions. */
+
+.wrap {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  /* Pulled up level with the breadcrumbs: this row sits between them and
+     the title, and at full height it opened a band of dead space above
+     every page heading. */
+  margin-top: -46px;
+  margin-bottom: 14px;
+}
+
+.split {
+  display: inline-flex;
+  align-items: stretch;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 9px;
+  background: var(--ifm-background-surface-color);
+  overflow: hidden;
+}
+
+.main,
+.caret {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  border: none;
+  background: none;
+  color: var(--ifm-color-emphasis-700);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 550;
+  cursor: pointer;
+  transition: background 0.14s, color 0.14s;
+}
+
+.main {
+  padding: 0 12px;
+}
+.main:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+.caret {
+  padding: 0 7px;
+  border-left: 1px solid var(--ifm-toc-border-color);
+}
+.caret:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+.caretDown,
+.caretUp {
+  display: inline-flex;
+  transition: transform 0.15s;
+}
+.caretUp {
+  transform: rotate(180deg);
+}
+
+.main svg,
+.caret svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.copied {
+  color: #0e8a5f;
+}
+
+/* --- menu --- */
+.menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 40;
+  width: 320px;
+  padding: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-toc-border-color);
+  /* --ifm-background-color is `transparent` on this site, so the menu needs
+     its own opaque ground or the page shows through. */
+  background: var(--mw-surface, #fff);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.14);
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  width: 100%;
+  padding: 9px 10px;
+  border: none;
+  border-radius: 9px;
+  background: none;
+  text-align: left;
+  font-family: inherit;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+.item:hover {
+  background: var(--ifm-color-emphasis-100);
+  text-decoration: none;
+  color: var(--ifm-font-color-base);
+}
+
+.itemIco {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-color-emphasis-700);
+}
+.itemIco svg {
+  width: 15px;
+  height: 15px;
+}
+
+.itemText {
+  min-width: 0;
+}
+
+.itemTitle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.itemDesc {
+  display: block;
+  margin-top: 2px;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.ext {
+  width: 11px;
+  height: 11px;
+  flex: none;
+  color: var(--ifm-color-emphasis-500);
+}
+
+@media (max-width: 996px) {
+  /* Breadcrumbs wrap to several lines on small screens, so the button stops
+     riding alongside them and takes its own row. */
+  .wrap {
+    margin-top: 4px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu {
+    width: min(320px, calc(100vw - 32px));
+  }
+}

@@ -1,0 +1,31 @@
+.steps {
+  margin: 20px 0 28px;
+}
+
+.step {
+  padding: 20px 0;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+.step:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.stepTitle {
+  font-size: 16px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin: 0 0 8px;
+}
+
+.stepContent {
+  font-size: 14.5px;
+  color: var(--ifm-color-emphasis-800);
+  line-height: 1.7;
+}
+.stepContent > p:first-child {
+  margin-top: 0;
+}
+.stepContent > *:last-child {
+  margin-bottom: 0;
+}

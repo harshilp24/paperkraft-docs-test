@@ -1,0 +1,81 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--mw-card-cols, 2), 1fr);
+  gap: 12px;
+  margin: 20px 0 28px;
+}
+@media (max-width: 680px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: block;
+  padding: 16px 18px;
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+.card:hover {
+  border-color: var(--mw-brand-line);
+  box-shadow: 0 4px 16px color-mix(in srgb, var(--mw-brand) 7%, transparent);
+  transform: translateY(-1px);
+  text-decoration: none;
+  color: inherit;
+}
+
+.card.horizontal {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--mw-brand-soft);
+  color: var(--mw-brand);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  min-width: 0;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14.5px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+}
+.arrow {
+  margin-left: auto;
+  color: var(--ifm-color-emphasis-500);
+  transition: transform 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.card:hover .arrow {
+  transform: translateX(2px);
+  color: var(--mw-brand);
+}
+
+.desc {
+  font-size: 13px;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+.desc p {
+  margin: 0;
+}

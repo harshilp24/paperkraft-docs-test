@@ -1,0 +1,33 @@
+.navbarInner {
+  position: relative;
+}
+
+.centerGroup {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: min(560px, 46vw);
+}
+
+.centerGroup :global(.navbar__search) {
+  flex: 1;
+  min-width: 0;
+}
+
+.centerGroup :global(.navbar__search-input) {
+  width: 100%;
+}
+
+.colorModeToggle {
+  margin-left: 4px;
+}
+
+@media (max-width: 996px) {
+  .centerGroup {
+    display: none;
+  }
+}

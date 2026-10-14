@@ -1,0 +1,570 @@
+/**
+ * Xenon Studio Docs docs. One accent, quiet borders, Inter, content first.
+ * The main colour is #c2410c: change it here, in both blocks.
+ */
+
+:root {
+  --mw-brand: #c2410c;
+  --mw-brand-dark: #af3b0b;
+  --mw-brand-soft: color-mix(in srgb, #c2410c 8%, #fff);
+  --mw-brand-line: color-mix(in srgb, #c2410c 25%, #fff);
+
+  --ifm-color-primary: #c2410c;
+  --ifm-color-primary-dark: #af3b0b;
+  --ifm-color-primary-darker: #a5370a;
+  --ifm-color-primary-darkest: #882e08;
+  --ifm-color-primary-light: #c85424;
+  --ifm-color-primary-lighter: #cb5e30;
+  --ifm-color-primary-lightest: #d47a55;
+
+  --ifm-font-family-base: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-heading-font-family: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --ifm-font-weight-semibold: 600;
+  --ifm-code-font-size: 90%;
+  --docusaurus-highlighted-code-line-bg: color-mix(in srgb, #c2410c 8%, transparent);
+  font-feature-settings: 'cv11', 'ss01';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Opaque grounds for the search palette and menus. */
+  --mw-surface: #ffffff;
+  --mw-surface-2: #f7f8fa;
+
+  --mw-navbar-real-height: 3.75rem;
+  --mw-subnav-height: 2.75rem;
+  --ifm-navbar-height: calc(var(--mw-navbar-real-height) + var(--mw-subnav-height));
+}
+
+[data-theme='dark'] {
+  --mw-surface: #1b1d24;
+  --mw-surface-2: #22252e;
+
+  --mw-brand: #d78461;
+  --mw-brand-dark: #db9071;
+  --mw-brand-soft: color-mix(in srgb, #c2410c 12%, transparent);
+  --mw-brand-line: color-mix(in srgb, #d78461 30%, transparent);
+
+  --ifm-color-primary: #d78461;
+  --ifm-color-primary-dark: #c27757;
+  --ifm-color-primary-darker: #b77052;
+  --ifm-color-primary-darkest: #975c44;
+  --ifm-color-primary-light: #db9071;
+  --ifm-color-primary-lighter: #dd9679;
+  --ifm-color-primary-lightest: #e3a990;
+  --docusaurus-highlighted-code-line-bg: color-mix(in srgb, #d78461 10%, transparent);
+}
+
+/* Navbar */
+.navbar {
+  height: var(--mw-navbar-real-height);
+  min-height: var(--mw-navbar-real-height);
+  box-shadow: none;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+}
+
+.navbar__brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.navbar__logo {
+  height: 1.6rem;
+}
+
+.navbar-signin-link {
+  font-size: 13.5px;
+  padding: 7px 12px !important;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-toc-border-color);
+}
+.navbar-signin-link:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.navbar__items--right > .navbar__item:has(button) {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__search-input {
+  border-radius: 9px;
+  border: 1px solid var(--ifm-toc-border-color);
+  background: var(--ifm-background-surface-color);
+  width: 260px;
+}
+
+/* === SIDEBAR: MINIMAL, CLEAN STYLE === */
+.sidebar {
+  background: var(--ifm-background-color);
+  padding-top: 12px;
+  padding-bottom: 24px;
+}
+
+.sidebar ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebar li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Category headers (collapsible sections) */
+.menu__list-item-collapsible > a {
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  padding: 8px 12px;
+  color: var(--ifm-color-emphasis-800);
+  transition: color 0.15s ease;
+  border-radius: 4px;
+}
+
+.menu__list-item-collapsible > a:hover {
+  color: var(--mw-brand);
+}
+
+.menu__list-item-collapsible--active > a {
+  color: var(--mw-brand);
+  font-weight: 600;
+}
+
+/* Individual doc links (menu items) — clean, minimal */
+.menu__link {
+  font-size: 13.5px;
+  font-weight: 500;
+  padding: 6px 12px;
+  color: var(--ifm-color-emphasis-700);
+  letter-spacing: -0.005em;
+  transition: all 0.12s ease;
+  margin: 1px 0;
+  border-left: 2px solid transparent;
+}
+
+.menu__link:hover {
+  color: var(--mw-brand);
+}
+
+/* Active state: just color, minimal */
+.menu__link--active {
+  color: var(--mw-brand);
+}
+
+/* Collapse/expand icon */
+.menu__caret::before {
+  background-size: 1.4rem 1.4rem;
+}
+
+.menu__list-item-collapsible--active .menu__caret::before {
+  transform: rotate(90deg);
+}
+
+/* Nested categories */
+.menu__list .menu__list {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  padding-left: 8px;
+  border-left: 1px solid var(--ifm-toc-border-color);
+  margin-left: 8px;
+}
+
+.menu__list .menu__list .menu__list {
+  padding-left: 6px;
+  margin-left: 6px;
+}
+
+/* === PAGE TYPOGRAPHY: CLEAN & REFINED === */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.markdown {
+  line-height: 1.7;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.markdown h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  margin-top: 0;
+  line-height: 1.25;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.markdown h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-top: 40px;
+  margin-bottom: 18px;
+  line-height: 1.35;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.markdown h3 {
+  font-size: 1.15rem;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  margin-top: 30px;
+  margin-bottom: 14px;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  font-weight: 650;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  letter-spacing: -0.005em;
+}
+
+.markdown p {
+  line-height: 1.75;
+  margin-bottom: 16px;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Padding, not margin: `outside` markers are drawn in the element's left
+   padding, so with padding:0 they hung off the content box and sat flush
+   against the column edge. */
+.markdown ul,
+.markdown ol {
+  margin-left: 0;
+  margin-bottom: 18px;
+  padding-left: 26px;
+}
+
+/* Nested lists inside a numbered step need their own indent. */
+.markdown li > ul,
+.markdown li > ol {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Multi-paragraph list items (a step with a code block or a note) should
+   not collapse against the next step. */
+.markdown li > p {
+  margin-bottom: 10px;
+}
+
+.markdown li {
+  margin-bottom: 10px;
+  line-height: 1.75;
+}
+
+.markdown strong {
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-900);
+}
+
+.markdown code {
+  background: var(--ifm-color-emphasis-100);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.markdown a {
+  color: var(--mw-brand);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+  border-bottom: 1px solid color-mix(in srgb, var(--mw-brand) 25%, transparent);
+}
+
+.markdown a:hover {
+  opacity: 0.8;
+  border-bottom-color: var(--mw-brand);
+}
+
+[data-theme='dark'] .markdown a {
+  border-bottom-color: color-mix(in srgb, var(--mw-brand) 35%, transparent);
+}
+
+/* === CALLOUTS (ADMONITIONS) === */
+.admonition {
+  border-radius: 6px;
+  border-left: 3px solid;
+  padding: 13px 15px;
+  margin: 20px 0;
+  background: var(--ifm-color-emphasis-100);
+  line-height: 1.65;
+  font-size: 14.5px;
+}
+
+/* Docusaurus emits `theme-admonition-<type>`, not `admonition-<type>`, so the
+   type-specific rules need that class to actually apply. */
+.theme-admonition-info,
+.theme-admonition-note {
+  border-left-color: var(--mw-brand);
+  background: var(--mw-brand-soft);
+}
+
+.theme-admonition-tip {
+  border-left-color: #10b981;
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.theme-admonition-caution,
+.theme-admonition-warning {
+  border-left-color: #f59e0b;
+  background: rgba(245, 158, 11, 0.06);
+}
+
+.theme-admonition-danger {
+  border-left-color: #ef4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.admonition-title {
+  font-weight: 700;
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* === CODE BLOCKS === */
+.docusaurus-highlight-code-line {
+  background: var(--docusaurus-highlighted-code-line-bg);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.prism-code {
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 14px 16px !important;
+}
+
+/* Scoped to doc content: a bare `pre` rule with !important also hijacked the
+   custom code panes on the landing page. */
+.markdown pre {
+  margin: 18px 0;
+  background: var(--ifm-color-emphasis-100) !important;
+}
+
+/* === TABLES === */
+.markdown table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.markdown thead {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.markdown th {
+  font-weight: 650;
+  padding: 12px 14px;
+  text-align: left;
+  letter-spacing: -0.005em;
+  font-size: 14px;
+}
+
+.markdown td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
+  font-size: 14px;
+}
+
+.markdown tbody tr:hover {
+  background: var(--ifm-color-emphasis-50);
+}
+
+/* === HOMEPAGE === */
+.mwHero {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 32px 24px;
+}
+
+/* =====================================================================
+   DOC SHELL
+   Reading column, table of contents, sidebar hierarchy and page footer.
+   Restrained on purpose: quiet borders, one accent, content dominates.
+   ===================================================================== */
+
+/* --- reading column ---------------------------------------------------
+   Prose caps at ~72 characters. Wide tables, diagrams and code can still
+   break out via .markdown > * overrides below. */
+.theme-doc-markdown.markdown,
+.theme-doc-footer,
+.theme-doc-breadcrumbs {
+  max-width: 47rem;
+}
+
+/* Docusaurus centres the column in the remaining space; pin it left so the
+   eye returns to the same place when the TOC appears and disappears. */
+.docItemCol_node_modules-\@docusaurus-theme-classic-lib-theme-DocItem-Layout-styles-module {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+article {
+  padding-top: 4px;
+}
+
+/* --- table of contents ------------------------------------------------ */
+.table-of-contents {
+  border-left: 1px solid var(--ifm-toc-border-color);
+  padding-left: 14px;
+  font-size: 13px;
+}
+
+.table-of-contents__left-border {
+  border: none;
+}
+
+.table-of-contents__link {
+  display: block;
+  padding: 5px 0;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.45;
+}
+
+.table-of-contents__link:hover,
+.table-of-contents__link--active {
+  color: var(--mw-brand);
+  font-weight: 550;
+  text-decoration: none;
+}
+
+/* A heading above the TOC, the way Stripe and Supabase label it. */
+.theme-doc-toc-desktop::before {
+  content: 'On this page';
+  display: block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 10px;
+  padding-left: 15px;
+}
+
+/* Most pages in this prototype have no headings yet. An empty rail reads
+   as a rendering bug, so hide the label when there is nothing to list. */
+.theme-doc-toc-desktop:not(:has(.table-of-contents__link)) {
+  display: none;
+}
+
+/* --- breadcrumbs ------------------------------------------------------ */
+.breadcrumbs {
+  margin-bottom: 18px;
+  /* the page-actions button is pulled up alongside this row */
+  padding-right: 150px;
+}
+
+@media (max-width: 996px) {
+  .breadcrumbs {
+    padding-right: 0;
+  }
+}
+
+.breadcrumbs__item {
+  font-size: 13px;
+}
+
+.breadcrumbs__link {
+  color: var(--ifm-color-emphasis-600);
+  background: none;
+  padding: 2px 0;
+}
+
+.breadcrumbs__link:hover {
+  background: none;
+  color: var(--mw-brand);
+  text-decoration: none;
+}
+
+.breadcrumbs__item--active .breadcrumbs__link {
+  background: none;
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 550;
+}
+
+/* --- sidebar hierarchy ------------------------------------------------ */
+.menu {
+  font-size: 13.5px;
+  padding: 0 12px 40px !important;
+}
+
+/* Rail on the active leaf, rather than a filled pill. Quieter, and it
+   survives long labels wrapping to two lines. */
+.menu__link {
+  border-radius: 6px;
+  padding: 6px 10px;
+  line-height: 1.45;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.menu__link:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-font-color-base);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--mw-brand-soft);
+  color: var(--mw-brand);
+  font-weight: 600;
+}
+
+/* --- page footer: prev / next ----------------------------------------- */
+.pagination-nav {
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid var(--ifm-toc-border-color);
+  gap: 16px;
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 12px;
+  padding: 14px 18px;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--mw-brand);
+  background: var(--ifm-color-emphasis-50);
+}
+
+.pagination-nav__sublabel {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-600);
+  margin-bottom: 5px;
+}
+
+.pagination-nav__label {
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ifm-font-color-base);
+}
+
+/* --- responsive ------------------------------------------------------- */
+@media (max-width: 996px) {
+  .theme-doc-markdown.markdown,
+  .theme-doc-footer,
+  .theme-doc-breadcrumbs {
+    max-width: none;
+  }
+}
